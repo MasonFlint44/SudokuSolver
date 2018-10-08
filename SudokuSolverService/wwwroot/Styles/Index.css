@@ -1,0 +1,76 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.cell {
+    display: table-cell;
+    width: 30px;
+    height: 30px;
+    border: .5px darkgray solid;
+    border-collapse: collapse;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.cell:hover {
+    background: aliceblue;
+}
+
+.cell:focus {
+    background: aliceblue;
+}
+
+.cell:nth-child(3n) {
+    border-right: 2px black solid;
+}
+
+.cell:nth-child(9) {
+    border-right: 0;
+}
+
+.row {
+    display: table-row;
+    border-collapse: collapse;
+}
+
+.row:nth-child(3n) {
+    border-bottom: 2px black solid;
+}
+
+.row:nth-child(9) {
+    border-bottom: 0;
+}
+
+.puzzle {
+    display: table;
+    border: 2px black solid;
+    border-collapse: collapse;
+    float: left;
+    margin-bottom: 15px;
+}
+
+.buttons {
+    margin: 5px 25px;
+    display: inline-block;
+}
+
+.buttons > button {
+    display: block;
+    width: 120px;
+    background: white;
+    border: black solid 1.5px;
+    border-radius: 3px;
+    margin-bottom: 10px;
+}
+
+.buttons > button:hover {
+    background: aliceblue;
+}
+
+.solvedResults {
+    clear: both;
+}
+
+#executionTime, #steps {
+    display: inline;
+}

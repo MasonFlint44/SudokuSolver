@@ -1,0 +1,45 @@
+﻿@using Microsoft.AspNetCore.Html
+@{
+    ViewData["Title"] = "Index";
+}
+
+<head>
+    <title>Sudoku Solver</title>
+    <link rel="stylesheet" href="~/Styles/Index.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+</head>
+<body>
+<h2>Sudoku Solver</h2>
+<div class="puzzle">
+    @{
+        var puzzle = "";
+        for (var i = 0; i < 81; i++)
+        {
+            if (i % 9 == 0) { puzzle += "<div class='row'>"; }
+
+            puzzle += "<div class='cell' contenteditable='true'></div>";
+
+            if((i + 1) % 9 == 0) { puzzle += "</div>"; }
+        }
+    }
+    @(new HtmlString(puzzle))
+</div>
+<div class="buttons">
+    <button id="puzzle1">Puzzle 1</button>
+    <button id="puzzle2">Puzzle 2</button>
+    <button id="puzzle3">Puzzle 3</button>
+    <button id="reset">Reset</button>
+    <button id="solve">Solve</button>
+</div>
+<div class="solvedResults">
+    <label>Execution Time: </label>
+    <div id="executionTime"></div><br/>
+    <label>Steps: </label>
+    <div id="steps"></div>
+</div>
+<script
+    src="https://code.jquery.com/jquery-3.2.1.js"
+    integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+    crossorigin="anonymous"></script>
+<script src="~/Scripts/Index.js"></script>
+</body>
